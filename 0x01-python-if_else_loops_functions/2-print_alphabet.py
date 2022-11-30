@@ -7,4 +7,5 @@
 for unicode_value in range(ord('a'), ord('z') + 1):
     # Generates range of alphabet characters
     # and prints them
-    print(chr(unicode_value), end="")
+    alphabet = chr(unicode_value)
+    print("{}".format(alphabet), end="")
