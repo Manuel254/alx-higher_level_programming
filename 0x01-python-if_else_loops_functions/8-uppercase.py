@@ -24,4 +24,4 @@ def uppercase(str):
             character = chr(unicode_value)
         new_str += character
 
-    print(new_str)
+    print("{}".format(new_str))
