@@ -10,6 +10,6 @@ for number in range(0, 100):
     # and puts 0 to 10 into 2 digits
     # then adds a comma and space
     if number != 99:
-        print("{:02d}".format(number), end=", ")
+        print(f"{number:02d}", end=", ")
     else:
         print("{}".format(number))
