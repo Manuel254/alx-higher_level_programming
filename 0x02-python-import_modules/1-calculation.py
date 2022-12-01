@@ -6,13 +6,13 @@ b = 5
 
 if __name__ == '__main__':
     # Prints add of a and b
-    print("{} + {} = {}".format(a, b, calc.add(a, b)))
+    print("{:d} + {:d} = {:d}".format(a, b, calc.add(a, b)))
 
     # Prints sub of a and b
-    print("{} - {} = {}".format(a, b, calc.sub(a, b)))
+    print("{:d} - {:d} = {:d}".format(a, b, calc.sub(a, b)))
 
     # Prints mul of a and b
-    print("{} * {} = {}".format(a, b, calc.mul(a, b)))
+    print("{:d} * {:d} = {:d}".format(a, b, calc.mul(a, b)))
 
     # prints div of a and b
-    print("{} / {} = {}".format(a, b, calc.div(a, b)))
+    print("{:d} / {:d} = {:d}".format(a, b, calc.div(a, b)))
