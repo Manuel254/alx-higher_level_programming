@@ -9,4 +9,7 @@ def best_score(a_dictionary):
 
     max_score = max(zip(keys, values))
 
+    if max_score is None:
+        return
+
     return max_score[0]
