@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def remove_char_at(str, n):
-    """Removes a character at 
+    """Removes a character at
     a specified position
     """
     new_str = ""
