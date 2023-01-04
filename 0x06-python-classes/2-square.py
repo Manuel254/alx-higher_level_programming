@@ -10,6 +10,7 @@ class Square:
 
         Args:
             size (int): Size of the square (Dimensions)
+
         """
         if type(size) is not int:
             raise TypeError("size must be an integer")
