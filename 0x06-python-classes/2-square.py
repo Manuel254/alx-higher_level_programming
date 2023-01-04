@@ -3,6 +3,7 @@
 """This module defines a class by a private instance attribute
 and it must be an integer which greater thanor equal to 0"""
 
+
 class Square:
     """This class creates a square of a defined size"""
     def __init__(self, size=0):
