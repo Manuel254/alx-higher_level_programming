@@ -11,14 +11,13 @@ def add_integer(a, b=98):
     Returns:
         int: The addition of two integers
 
+    Raises:
+        TypeError: if a or be is not integer
+
     """
-    if type(a) is (float):
-        a = int(a)
-    if type(b) is (float):
-        b = int(b)
-    if type(a) is not (int):
+    if (not isinstance(a, int)) and (not isinstance(a, float)):
         raise TypeError("a must be an integer")
-    if type(b) is not (int):
+    if (not isinstance(b, int)) and (not isinstance(b, float)):
         raise TypeError("b must be an integer")
 
-    return a + b
+    return int(a) + int(b)
