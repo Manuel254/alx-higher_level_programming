@@ -75,5 +75,14 @@ class Rectangle:
 
     def __str__(self):
         """Prints the rectangle object in a pretty format"""
-        for row in range(self.height):
-            return  (("#" * self.width) + "\n") * self.height
+        if self.width == 0 or self.height == 0:
+            return ""
+
+        rect = []
+        for i in range(self.height):
+            [rect.append('#') for j in range(self.width)]
+
+            if i != self.height - 1:
+                rect.append("\n")
+
+        return "".join(rect)
