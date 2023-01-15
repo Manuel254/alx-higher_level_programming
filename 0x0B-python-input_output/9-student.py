@@ -22,4 +22,3 @@ class Student:
         of a student instance
         """
         return self.__dict__
-
