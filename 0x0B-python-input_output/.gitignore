@@ -5,7 +5,7 @@ my_fake.json
 my_list.json
 my_dict.json
 my_set.json
-[0-9]-main.py
+[0-9]*-main.py
 8-main_2.py
 8-my_class.py
 8-my_class_2.py
