@@ -1,0 +1,52 @@
+Tests for 7-base_geometry
+========================
+
+Import from ``7-base_geometry``
+-------------------------------
+
+Usage:
+
+Import module:
+
+::
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Instantiate:
+
+::
+	>>> bg = BaseGeometry()
+
+Examples:
+
+If value is an integer.
+
+::
+	>>> bg.integer_validator("my_int", 12)
+	>>> bg.integer_validator("width", 89)
+
+If value is a string.
+
+::
+	>>> try:
+	...	bg.integer_validator("name", "John")
+	... except Exception as e:
+	...	print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError] name must be an integer
+
+If value is 0.
+
+::
+	>>> try:
+	...	bg.integer_validator("age", 0)
+	... except Exception as e:
+	...	print("[{}] {}".format(e.__class__.__name__, e))
+	[ValueError] age must be greater than 0
+
+If value is less than 0.
+
+::
+	>>> try:
+	...	bg.integer_validator("distance", -4)
+	... except Exception as e:
+	...	print("[{}] {}".format(e.__class__.__name__, e))
+	[ValueError] distance must be greater than 0
