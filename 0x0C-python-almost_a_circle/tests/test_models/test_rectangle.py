@@ -10,6 +10,7 @@ class TestRectangle(unittest.TestCase):
         self.r1 = Rectangle(3, 2)
         self.r2 = Rectangle(2, 10)
         self.r3 = Rectangle(8, 7, 0, 0, 12)
+        self.r4 = Rectangle(4, 6, 2, 1, 12)
 
     def test_width(self):
         with self.assertRaises(TypeError):
