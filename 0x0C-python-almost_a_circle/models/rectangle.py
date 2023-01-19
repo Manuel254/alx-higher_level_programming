@@ -91,3 +91,17 @@ class Rectangle(Base):
                                             self.id, self.__x, self.__y,
                                             self.__width, self.__height
                                             )
+
+    def update(self, *args):
+        """updates the instance attributes"""
+        for i in range(len(args)):
+            if i == 0:
+                self.id = args[i]
+            if i == 1:
+                self.width = args[i]
+            if i == 2:
+                self.height = args[i]
+            if i == 3:
+                self.x = args[i]
+            if i == 4:
+                self.y = args[i]
