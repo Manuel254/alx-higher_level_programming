@@ -7,8 +7,29 @@ from models.rectangle import Rectangle
 class TestRectangle(unittest.TestCase):
     """A class that tests the Rectangle class"""
 
-    def setUp(self):
-        """setUp function"""
-        self.r1 = Rectangle(10, 2)
-        self.r2 = Base(2, 10)
-        self.r3 = Base(10, 2, 0, 0, 12)
+    def test_width(self):
+        with self.assertRaises(TypeError):
+            Rectangle("10", 2)
+            Rectangle({}, 10)
+        with self.assertRaises(ValueError):
+            Rectangle(-10, 2)
+            Rectangle(0, 2)
+
+    def test_height(self):
+        with self.assertRaises(TypeError):
+            Rectangle(10, "2")
+        with self.assertRaises(ValueError):
+            Rectangle(10, 0)
+            Rectangle(10, -10)
+
+    def test_x(self):
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, "5", 0)
+        with self.assertRaises(ValueError):
+            Rectangle(10, 2, -1, 5)
+
+    def test_y(self):
+        with self.assertRaises(TypeError):
+            Rectangle(10, 2, 5, "4")
+        with self.assertRaises(ValueError):
+            Rectangle(10, 2, 1, -5)
