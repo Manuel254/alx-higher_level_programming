@@ -30,6 +30,28 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def update(self, *args, **kwargs):
+        """Updates attributes"""
+        if len(args) != 0:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[i]
+                if i == 1:
+                    self.size = args[i]
+                if i == 2:
+                    self.x = args[i]
+                if i == 3:
+                    self.y = args[i]
+        else:
+            for k, v in kwargs.items():
+                if k == "id":
+                    self.id = kwargs[k]
+                if k == "size":
+                    self.size = kwargs[k]
+                if k == "x":
+                    self.x = kwargs[k]
+                if k == "y":
+                    self.y = kwargs[k]
     def __str__(self):
         """Well-formatted square instance"""
         return "[{}] ({}) {}/{} - {}".format(
