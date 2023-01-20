@@ -2,6 +2,7 @@
 
 """This module handles the Base class"""
 import json
+import csv
 from os.path import exists
 
 
@@ -65,6 +66,42 @@ class Base:
                 list_objs = cls.from_json_string(obj_string)
                 objs = [cls.create(**dict) for dict in list_objs]
             return objs
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Saves data to csv"""
+        filename = cls.__name__ + ".csv"
+
+        with open(filename, "w", newline="") as f:
+            if list_objs is None or list_objs == []:
+                f.write("[]")
+            else:
+                if cls.__name__ == 'Rectangle':
+                    fields = ['id', 'width', 'height', 'x', 'y']
+                else:
+                    fields = ['id', 'size', 'x', 'y']
+
+                csv_writer = csv.DictWriter(f, fieldnames=fields)
+
+                for obj in list_objs:
+                    csv_writer.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads data from csv"""
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", newline="") as f:
+                if cls.__name__ == 'Rectangle':
+                    fields = ["id", "width", "height", "x", "y"]
+                else:
+                    fields = ["id", "size", "x", "y"]
+                csv_r = csv.DictReader(f, fieldnames=fields)
+                csv_r = [dict([k, int(v)] for k, v in d.items())
+                        for d in csv_r]
+                return [cls.create(**d) for d in csv_r]
+        except IOError:
+            return []
 
     @classmethod
     def create(cls, **dictionary):

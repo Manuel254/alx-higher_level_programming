@@ -1,3 +1,4 @@
 [0-9]*-main.py
 *.json
+*.csv
 git.sh
