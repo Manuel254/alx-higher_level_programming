@@ -50,3 +50,10 @@ class Base:
                 list_objs = [obj.to_dictionary() for obj in list_objs]
                 list_objs = cls.to_json_string(list_objs)
                 f.write(list_objs)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        r1 = cls(10, 5, 2)
+        r1.update(**dictionary)
+        return r1
