@@ -52,6 +52,7 @@ class Square(Rectangle):
                     self.x = kwargs[k]
                 if k == "y":
                     self.y = kwargs[k]
+
     def __str__(self):
         """Well-formatted square instance"""
         return "[{}] ({}) {}/{} - {}".format(
