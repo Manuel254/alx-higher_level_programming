@@ -2,6 +2,7 @@
 
 """This module handles the Base class"""
 import json
+from os.path import exists
 
 
 class Base:
@@ -50,6 +51,20 @@ class Base:
                 list_objs = [obj.to_dictionary() for obj in list_objs]
                 list_objs = cls.to_json_string(list_objs)
                 f.write(list_objs)
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        filename = cls.__name__ + ".json"
+
+        if not exists(filename):
+            return []
+        else:
+            with open(filename, "r") as f:
+                obj_string = f.read()
+                list_objs = cls.from_json_string(obj_string)
+                objs = [cls.create(**dict) for dict in list_objs]
+            return objs
 
     @classmethod
     def create(cls, **dictionary):
