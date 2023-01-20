@@ -94,15 +94,6 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-    def __str__(self):
-        """Well-formatted representation of rectangle instance"""
-        return \
-            "[{}] ({}) {}/{} - {}/{}".format(
-                                            self.__class__.__name__,
-                                            self.id, self.__x, self.__y,
-                                            self.__width, self.__height
-                                            )
-
     def update(self, *args, **kwargs):
         """updates the instance attributes"""
         if len(args) != 0:
@@ -129,3 +120,22 @@ class Rectangle(Base):
                     self.x = kwargs[k]
                 if k == "y":
                     self.y = kwargs[k]
+
+    def to_dictionary(self):
+        """Dictionary representation of rectangle"""
+        return {
+                "x": self.x,
+                "y": self.y,
+                "id": self.id,
+                "width": self.width,
+                "height": self.height
+                }
+
+    def __str__(self):
+        """Well-formatted representation of rectangle instance"""
+        return \
+            "[{}] ({}) {}/{} - {}/{}".format(
+                                            self.__class__.__name__,
+                                            self.id, self.__x, self.__y,
+                                            self.__width, self.__height
+                                            )
