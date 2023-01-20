@@ -56,8 +56,8 @@ class Base:
         """returns an instance with all attributes already set"""
         if dictionary != {}:
             if cls.__name__ == 'Rectangle':
-                obj = cls(10, 5, 2)
-            if cls.__name__ == 'Square':
+                obj = cls(10, 5)
+            else:
                 obj = cls(5)
             obj.update(**dictionary)
             return obj
