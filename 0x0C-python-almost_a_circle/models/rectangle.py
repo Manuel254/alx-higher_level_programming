@@ -9,7 +9,16 @@ class Rectangle(Base):
     """Defines a Rectangle class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Instantiation"""
+        """Instantiation of a rectangle.
+
+        Args:
+            width (int): width of rectangle
+            height (int): height of rectangle
+            x (int): x coordinate of rectangle
+            y (int): y coordinate of rectangle
+            id (int): identity of rectangle
+
+        """
         self.width = width
         self.height = height
         self.x = x
