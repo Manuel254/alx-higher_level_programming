@@ -36,6 +36,7 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """Saves list of objects to file"""
