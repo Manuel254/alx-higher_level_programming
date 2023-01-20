@@ -94,16 +94,29 @@ class Rectangle(Base):
                                             self.__width, self.__height
                                             )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """updates the instance attributes"""
-        for i in range(len(args)):
-            if i == 0:
-                self.id = args[i]
-            if i == 1:
-                self.width = args[i]
-            if i == 2:
-                self.height = args[i]
-            if i == 3:
-                self.x = args[i]
-            if i == 4:
-                self.y = args[i]
+        if len(args) != 0:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[i]
+                if i == 1:
+                    self.width = args[i]
+                if i == 2:
+                    self.height = args[i]
+                if i == 3:
+                    self.x = args[i]
+                if i == 4:
+                    self.y = args[i]
+        else:
+            for k, v in kwargs.items():
+                if k == "id":
+                    self.id = kwargs[k]
+                if k == "width":
+                    self.width = kwargs[k]
+                if k == "height":
+                    self.height = kwargs[k]
+                if k == "x":
+                    self.x = kwargs[k]
+                if k == "y":
+                    self.y = kwargs[k]
