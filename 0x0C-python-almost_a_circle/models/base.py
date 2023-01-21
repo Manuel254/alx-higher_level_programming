@@ -4,6 +4,7 @@
 import json
 import csv
 from os.path import exists
+from turtle import *
 
 
 class Base:
@@ -113,3 +114,22 @@ class Base:
                 obj = cls(5)
             obj.update(**dictionary)
             return obj
+
+    @staticmethod
+    def draw(list_rectangles):
+        """Draws rectangles ans squares on screen"""
+        getscreen()
+        title("Rectangles and Squares")
+
+        for r in list_rectangles:
+            penup()
+            goto(r.x, r.y)
+            pendown()
+            for i in range(2):
+                fd(r.width)
+                rt(90)
+                fd(r.height)
+                rt(90)
+
+
+
