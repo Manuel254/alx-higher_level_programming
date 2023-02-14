@@ -116,10 +116,11 @@ class Base:
             return obj
 
     @staticmethod
-    def draw(list_rectangles):
-        """Draws rectangles ans squares on screen"""
+    def draw(list_rectangles, list_squares):
+        """Draws rectangles and squares on screen"""
         getscreen()
         title("Rectangles and Squares")
+        bgcolor("#c0c0c0")
 
         for r in list_rectangles:
             penup()
@@ -131,5 +132,10 @@ class Base:
                 fd(r.height)
                 rt(90)
 
-
-
+        for s in list_squares:
+            penup()
+            goto(s.x, s.y)
+            pendown()
+            for i in range(4):
+                fd(s.size)
+                rt(90)
