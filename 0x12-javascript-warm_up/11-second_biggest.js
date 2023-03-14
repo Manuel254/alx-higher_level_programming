@@ -7,9 +7,9 @@ args.shift();
 args.shift();
 
 if (args.length === 0 || args.length === 1) {
-  console.log(0);
+  console.log('0');
 } else {
   args = args.sort();
-  secondBiggest = Math.floor(args[args.length - 2]);
+  secondBiggest = args[args.length - 2];
   console.log(secondBiggest);
 }
