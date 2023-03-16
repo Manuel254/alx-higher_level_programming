@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-""" This module lists all states in the database
-hbtn_0e_0_usa
+""" This module lists all states with a name starting with
+N in the database hbtn_0e_0_usa
 """
 
 if __name__ == '__main__':
@@ -14,7 +14,7 @@ if __name__ == '__main__':
                          db=sys.argv[3])
     cur = db.cursor()
 
-    cur.execute('SELECT * FROM states ORDER BY states.id')
+    cur.execute('SELECT * FROM states WHERE name LIKE "N%" ORDER BY states.id')
 
     rows = cur.fetchall()
 

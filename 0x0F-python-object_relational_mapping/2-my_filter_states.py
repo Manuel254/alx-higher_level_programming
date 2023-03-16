@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
-""" This module lists all states in the database
-hbtn_0e_0_usa
+""" This module takes in an argument and displays all
+values in ths states table in the database hbtn_0e_0_usa
+where name matches the argument
 """
 
 if __name__ == '__main__':
@@ -14,7 +15,8 @@ if __name__ == '__main__':
                          db=sys.argv[3])
     cur = db.cursor()
 
-    cur.execute('SELECT * FROM states ORDER BY states.id')
+    cur.execute('SELECT * FROM states WHERE name LIKE BINARY "{}"\
+            ORDER BY states.id'.format(sys.argv[4]))
 
     rows = cur.fetchall()
 
