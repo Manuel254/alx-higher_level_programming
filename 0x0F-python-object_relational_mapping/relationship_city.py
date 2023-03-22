@@ -2,9 +2,8 @@
 
 """This module creates a class definition  of a City"""
 
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, ForeignKey
-from relationship_state import Base
+from relationship_state import Base, State
 
 
 class City(Base):
