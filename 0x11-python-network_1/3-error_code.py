@@ -17,4 +17,4 @@ if __name__ == '__main__':
         if hasattr(e, 'code'):
             print("Error code:", e.code)
     else:
-            print(body.decode('utf-8'))
+        print(body.decode('utf-8'))
