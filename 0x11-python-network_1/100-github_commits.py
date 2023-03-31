@@ -11,9 +11,13 @@ if __name__ == '__main__':
     owner = argv[2]
 
     res = requests.get(f"https://api.github.com/repos/{owner}/{repo}/commits")
-    res = res.json()
 
-    for commit in res:
-        id = commit.get('sha')
-        author = commit.get('commit').get('author').get('name')
-        print(f"{id}: {author}")
+    try:
+        res = res.json()
+    except ValueError:
+        pass
+    else:
+        for commit in res:
+            id = commit.get('sha')
+            author = commit.get('commit').get('author').get('name')
+            print(f"{id}: {author}")
