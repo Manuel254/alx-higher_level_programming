@@ -16,4 +16,3 @@ if __name__ == '__main__':
 
     with request.urlopen(req) as response:
         print(f"Your email is: {response.read()}")
-
