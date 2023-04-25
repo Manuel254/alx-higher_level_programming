@@ -12,10 +12,9 @@ request(url, function (error, response, body) {
 
     for (const movie of movies) {
       const characters = movie.characters;
-      const charUrl = 'https://swapi-api.alx-tools.com/api/people/18/';
 
       for (const character of characters) {
-        if (charUrl === character) count += 1;
+        if (character.includes('18')) count += 1;
       }
     }
     console.log(count);
